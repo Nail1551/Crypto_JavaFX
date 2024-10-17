@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="503.0" prefWidth="747.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="org.example.crypto_javafx.MainController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Crypto Analyzator" />
+
+    <TextField fx:id="filePathField" promptText="Введите путь к файлу" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 5px;" />
+    <Button fx:id="browseButton" onAction="#handleBrowse" style="-fx-background-color: #4CAF99; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-border-radius: 5px; -fx-padding: 10px 20px;" text="Выбрать файл" />
+
+    <Label style="-fx-font-size: 14px; -fx-text-fill: #333333;" text="Выберите режим:" />
+   <GridPane prefHeight="214.0" prefWidth="716.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="26.0" minHeight="0.0" prefHeight="17.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="26.0" minHeight="0.0" prefHeight="3.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="10.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="10.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="10.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="10.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+          <RadioButton fx:id="encryptMode" onAction="#handleModeChange" style="-fx-font-size: 14px; -fx-text-fill: #333333;" text="Зашифровать" />
+          <RadioButton fx:id="decryptMode" onAction="#handleModeChange" style="-fx-font-size: 14px; -fx-text-fill: #333333;" text="Расшифровать" GridPane.rowIndex="2" />
+          <RadioButton fx:id="bruteForceMode" onAction="#handleModeChange" style="-fx-font-size: 14px; -fx-text-fill: #333333;" text="Brute Force" GridPane.rowIndex="3" />
+          <RadioButton fx:id="statisticalAnalysisMode" onAction="#handleModeChange" style="-fx-font-size: 14px; -fx-text-fill: #333333;" text="Статистический анализ" GridPane.rowIndex="1" />
+      
+          <Button fx:id="processButton" onAction="#handleProcess" style="-fx-background-color: #4CAF90; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-border-radius: 5px; -fx-padding: 10px 20px;" text="Выполнить" GridPane.rowIndex="6" />
+      </children>
+   </GridPane>
+
+    <TextField fx:id="keyField" promptText="Введите ключ (целое число)" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 5px;" visible="false" />
+
+    <TextArea fx:id="outputArea" editable="false" prefHeight="145.0" prefWidth="707.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 5px;" />
+</VBox>
